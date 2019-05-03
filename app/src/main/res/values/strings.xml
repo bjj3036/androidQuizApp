@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">QuizApp</string>
+    <string name="mode_nonselect">모드를 선택해주세요.</string>
+    <string name="mode_easyselect">모든 문제가 객관식으로 출제됩니다.</string>
+    <string name="mode_hardselect">객관식과 주관식이 출제됩니다.</string>
+    <string name="question">문제</string>
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="LargeTextDimen">30dp</dimen>
+    <dimen name="LargeButtonDimen">24dp</dimen>
+    <dimen name="QuestionItemDimen">40dp</dimen>
+</resources>

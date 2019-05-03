@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activitys.QuestionActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Save"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ToggleButton
+            android:id="@+id/toggle_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:checked="false"
+            android:textAllCaps="false"
+            android:textOff="Text"
+            android:textOn="Image"
+            app:layout_constraintEnd_toStartOf="@+id/button_save"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/question"
+            android:textSize="@dimen/LargeTextDimen"
+            app:layout_constraintBottom_toTopOf="@+id/edit_question"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/edit_question"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:maxLines="5"
+            android:minLines="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_save" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="8dp"
+            android:text="배점"
+            android:textSize="@dimen/LargeTextDimen"
+            app:layout_constraintStart_toStartOf="@id/edit_question"
+            app:layout_constraintTop_toBottomOf="@+id/edit_question" />
+
+        <EditText
+            android:id="@+id/edit_score"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:inputType="numberDecimal"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView4"
+            app:layout_constraintStart_toEndOf="@+id/textView4" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/edit_score">
+
+            <RadioGroup
+                android:id="@+id/radiogroup_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radio_1"
+                    android:layout_width="@dimen/QuestionItemDimen"
+                    android:layout_height="@dimen/QuestionItemDimen"
+                    android:onClick="onRadioClick1" />
+
+                <RadioButton
+                    android:id="@+id/radio_2"
+                    android:layout_width="@dimen/QuestionItemDimen"
+                    android:layout_height="@dimen/QuestionItemDimen"
+                    android:layout_marginTop="80dp"
+                    android:onClick="onRadioClick2" />
+
+                <RadioButton
+                    android:id="@+id/radio_3"
+                    android:layout_width="@dimen/QuestionItemDimen"
+                    android:layout_height="@dimen/QuestionItemDimen"
+                    android:layout_marginTop="80dp"
+                    android:onClick="onRadioClick3" />
+
+                <RadioButton
+                    android:id="@+id/radio_4"
+                    android:layout_width="@dimen/QuestionItemDimen"
+                    android:layout_height="@dimen/QuestionItemDimen"
+                    android:layout_marginTop="80dp"
+                    android:onClick="onRadioClick4" />
+            </RadioGroup>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/textQuestionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="80dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/edit_score">
+
+            <EditText
+                android:id="@+id/text_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/QuestionItemDimen" />
+
+            <EditText
+                android:id="@+id/text_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/QuestionItemDimen"
+                android:layout_marginTop="80dp" />
+
+            <EditText
+                android:id="@+id/text_3"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/QuestionItemDimen"
+                android:layout_marginTop="80dp" />
+
+            <EditText
+                android:id="@+id/text_4"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/QuestionItemDimen"
+                android:layout_marginTop="80dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/imageQuestionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/edit_score">
+
+            <ImageView
+                android:id="@+id/image_1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@color/colorImageBackground"
+                android:clickable="true"
+                android:onClick="onImageClick" />
+
+            <ImageView
+                android:id="@+id/image_2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorImageBackground"
+                android:clickable="true"
+                android:onClick="onImageClick" />
+
+            <ImageView
+                android:id="@+id/image_3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorImageBackground"
+                android:clickable="true"
+                android:onClick="onImageClick" />
+
+            <ImageView
+                android:id="@+id/image_4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/colorImageBackground"
+                android:clickable="true"
+                android:onClick="onImageClick" />
+
+        </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
